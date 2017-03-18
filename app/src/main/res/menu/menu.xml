@@ -1,0 +1,39 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.anand.vishal.uietcommunication.ChatActivity">
+
+    <item
+        android:id="@+id/gall"
+        android:orderInCategory="100"
+        android:title="@string/student_gallery"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/notification"
+        android:orderInCategory="101"
+        android:title="@string/title_activity_notification"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/news"
+        android:orderInCategory="102"
+        android:title="@string/news"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/note"
+        android:orderInCategory="103"
+        android:title="@string/notes"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/editinfo"
+        android:orderInCategory="104"
+        android:title="@string/edit_info"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/logout"
+        android:orderInCategory="105"
+        android:title="@string/logout"
+        app:showAsAction="never" />
+</menu>

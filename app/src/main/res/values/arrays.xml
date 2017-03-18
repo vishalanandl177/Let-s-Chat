@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="text_size_entries">
+        <item>16 dp</item>
+        <item>18 dp</item>
+        <item>20 dp</item>
+        <item>22 dp</item>
+        <item>24 dp</item>
+        <item>26 dp</item>
+    </string-array>
+
+    <string-array name="text_size_values">
+        <item>16</item>
+        <item>18</item>
+        <item>20</item>
+        <item>22</item>
+        <item>24</item>
+        <item>26</item>
+    </string-array>
+
+    <string-array name="text_color_entries">
+        <item>Black</item>
+        <item>Grey</item>
+        <item>Red</item>
+        <item>Green</item>
+        <item>Blue</item>
+        <item>Magenta</item>
+    </string-array>
+
+    <string-array name="text_color_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+    </string-array>
+
+</resources>
