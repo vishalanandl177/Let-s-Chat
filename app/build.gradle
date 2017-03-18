@@ -1,14 +1,6 @@
 apply plugin: 'com.android.application'
 
 android {
-    signingConfigs {
-        key {
-            keyAlias 'letschat'
-            keyPassword 'Alizee@80094'
-            storeFile file('S:/WorkSpace/UIETStudent/keystore1.jks')
-            storePassword 'Alizee@80094'
-        }
-    }
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
     defaultConfig {
