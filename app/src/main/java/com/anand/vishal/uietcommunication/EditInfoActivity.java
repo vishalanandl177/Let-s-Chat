@@ -204,7 +204,8 @@ public class EditInfoActivity extends AppCompatActivity {
 
         @Override
         protected String doInBackground(String... params) {
-            String reg_url = "http://uietchatzone.3eeweb.com/resetprofile.php";
+            // Here use server side php script url that is responsible to update user profile information
+            String reg_url = "YourUrl/profileUpdate.php";
             String method = params[0];
 
             String new_name = params[1];
