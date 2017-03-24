@@ -69,7 +69,6 @@ public class ResetPassword extends AppCompatActivity {
         Proceed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               // resetPass();
                 resetPassword();
 
             }
@@ -96,23 +95,7 @@ public class ResetPassword extends AppCompatActivity {
         finish();
         return true;
     }
-    private void resetPass(){
-        Firebase fref = new Firebase("https://uiet-chat-app.firebaseio.com/");
-        fref.resetPassword(Email.getText().toString().trim(), new Firebase.ResultHandler() {
-            @Override
-            public void onSuccess() {
 
-                Log.e("Password","reset successful");
-            }
-
-            @Override
-            public void onError(FirebaseError firebaseError) {
-                Log.e("Password","reset error " + firebaseError);
-            }
-        });
-
-
-    }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -173,7 +156,8 @@ public class ResetPassword extends AppCompatActivity {
 
         @Override
         protected String doInBackground(String... params) {
-            String reg_url = "http://chatzone.netau.net/mail.php";
+            // Here use php script url to send email to user's email id to reset password.
+            String reg_url = "http://yourUrl/mail.php";
             String method = params[0];
             // if (method.equals("register")) {
 
