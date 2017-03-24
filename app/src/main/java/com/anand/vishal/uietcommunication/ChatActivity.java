@@ -111,30 +111,30 @@ public class ChatActivity extends AppCompatActivity implements Serializable, Ada
 
         sendBtn = (Button) findViewById(R.id.send_message);
         messageText = (EditText) findViewById(R.id.new_message);
-
-        String url = "";
+        // Enter your firebaseio url
+        String url = "https://yourlink";
         try {
             switch (UserBranch) {
                 case "CSE":
-                    url = "https://uiet-chat-app.firebaseio.com/cse";
+                    url += "/cse";
                     break;
                 case "IT":
-                    url = "https://uiet-chat-app.firebaseio.com/it";
+                    url += "/it";
                     break;
                 case "MEE":
-                    url = "https://uiet-chat-app.firebaseio.com/mee";
+                    url += "/mee";
                     break;
                 case "ECE":
-                    url = "https://uiet-chat-app.firebaseio.com/ece";
+                    url += "/ece";
                     break;
                 case "CHE":
-                    url = "https://uiet-chat-app.firebaseio.com/che";
+                    url += "/che";
                     break;
                 case "MSME":
-                    url = "https://uiet-chat-app.firebaseio.com/msme";
+                    url += "/msme";
                     break;
                 default:
-                    url = "https://uiet-chat-app.firebaseio.com/cse";
+                    url += "/cse";
             }
 
         } catch (Exception e) {
