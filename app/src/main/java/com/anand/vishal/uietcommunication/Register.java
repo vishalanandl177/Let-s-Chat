@@ -249,7 +249,8 @@ public class Register extends AppCompatActivity {
 
         @Override
         protected String doInBackground(String... params) {
-            String reg_url = "http://uietchatzone.3eeweb.com/Register.php";
+            // Use server side php script to register new users
+            String reg_url = "http://YourUrl/Register.php";
             String method = params[0];
 
             String name = params[1];
@@ -312,8 +313,8 @@ public class Register extends AppCompatActivity {
 
 
         private boolean UserAlreadyExist(String roll) {
-
-            String log_url = "http://uietchatzone.3eeweb.com/validateuser.php";
+            // If user's roll number already register then no need to register again. Use php script to validate.
+            String log_url = "http://YourUrl/validateuser.php";
 
             try {
                 URL url = new URL(log_url);
