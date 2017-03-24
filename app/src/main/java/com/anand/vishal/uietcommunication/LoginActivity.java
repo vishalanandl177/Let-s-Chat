@@ -70,14 +70,6 @@ import java.net.URLEncoder;
  */
 public class LoginActivity extends AppCompatActivity implements OnClickListener, GoogleApiClient.OnConnectionFailedListener {
 
-    private static String FB_APP_ID = "1719395631634069";
-    /**
-     * Id to identity READ_CONTACTS permission request.
-     */
-
-    /**
-     * Keep track of the login task to ensure we can cancel it if requested.
-     */
     private AutoCompleteTextView mEmailView;
     private EditText mPasswordView;
     private View mProgressView;
@@ -96,10 +88,6 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener,
     SQLiteDatabase database;
     String user_email;
 
-    // private LoginButton loginButton;
-    // private CallbackManager callbackManager;
-
-
     @Override
     protected void onSaveInstanceState(Bundle outState) {
 
@@ -110,40 +98,10 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener,
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //  FacebookSdk.sdkInitialize(getApplicationContext());
         setContentView(R.layout.activity_scroll_login);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         intentMain = new Intent(LoginActivity.this, ChatActivity.class);
-
-        /*
-        image = (ImageView) findViewById(R.id.im);
-        image.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                BitmapDrawable drawable = (BitmapDrawable) image.getDrawable();
-                Bitmap bm = drawable.getBitmap();
-                Intent intent = new Intent(LoginActivity.this, About.class);
-                Bundle scaleBundle = ActivityOptions.makeThumbnailScaleUpAnimation(
-                        image, bm, 0, 0).toBundle();
-                startActivity(intent,scaleBundle);
-            }
-        });
-*/
-
-
-        // callbackManager = CallbackManager.Factory.create();
-
-        // loginButton = (LoginButton)findViewById(R.id.login_button);
-
-     /*   loginButton.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onFblogin();
-            }
-        });
-       */
 
         try {
             database = this.openOrCreateDatabase("userDetails", MODE_PRIVATE, null);
@@ -193,22 +151,6 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener,
 
 
         mEmailSignInButton = (Button) findViewById(R.id.email_sign_in_button);
-
-        /*
-        PropertyValuesHolder pvhX = PropertyValuesHolder.ofFloat(View.SCALE_X, 2);
-        PropertyValuesHolder pvhY = PropertyValuesHolder.ofFloat(View.SCALE_Y, 2);
-        final ObjectAnimator scaleAnimation = ObjectAnimator.ofPropertyValuesHolder(mEmailSignInButton, pvhX, pvhY);
-
-        scaleAnimation.setRepeatCount(1);
-        scaleAnimation.setDuration(200);
-        scaleAnimation.setRepeatMode(ValueAnimator.REVERSE);
-
-        */
-
-
-        //  final Animation animation = AnimationUtils.loadAnimation(this,
-        //        R.anim.anim_translate);
-
 
         assert mEmailSignInButton != null;
 
@@ -503,11 +445,10 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener,
 
         @Override
         protected String doInBackground(String... params) {
-
-            String log_url = "http://uietchatzone.3eeweb.com/view.php";
+            // Here use server side php script url that is responsible to retrieve user login information
+            String log_url = "yourUrl/retrieve.php";
 
             String method = params[0];
-            //if (method.equals("login")) {
             String login_roll_no = params[1];
             String login_pass = params[2];
 
@@ -706,14 +647,12 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener,
 
         @Override
         protected String doInBackground(String... params) {
-            String reg_url = "http://chatzone.netau.net/verify.php";
+           
+            // If user's email is not verified then use a php script to send mail to user's registered email address
+            String reg_url = "yourUrl/verify.php";
             String method = params[0];
-            // if (method.equals("register")) {
 
-            //user_name,user_branch,user_roll_no,user_email,user_password
             String email = params[1];
-            //String pass = params[2];
-
 
             if (userEmailRegistered(email)) {
                 try {
@@ -778,8 +717,8 @@ public class LoginActivity extends AppCompatActivity implements OnClickListener,
         }
 
         private boolean userEmailRegistered(String email) {
-
-            String log_url = "http://uietchatzone.3eeweb.com/emailexist.php";
+            // If user's email already register then display user to email already registered.
+            String log_url = "http://yourUrl/emailexist.php";
 
             try {
                 URL url = new URL(log_url);
