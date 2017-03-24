@@ -36,8 +36,9 @@ public class Notification extends AppCompatActivity {
 
 
     private FirebaseRecyclerAdapter<NotificationHolder, MessageViewHolder> mFirebaseAdapter;
-
-    String url = "https://uiet-chat-app.firebaseio.com/notifications";
+    
+    // Here use firebase database url/notification to store notifications
+    String url = "https:YourUrl/notifications";
     Firebase fRef;
     String UserName, UserBranch, UserYear, UserRollNo, UserEmail;
 
